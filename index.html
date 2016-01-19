@@ -8,9 +8,9 @@
 </head>
 <body>
 	<h1>Life Overflow</h1>
-  <input class= "col-md-3" type="text" placeholder="Title Your Post">
-  <input class= "col-md-7" type="text" placeholder="Put Question Here">
-  <button type="button" class="btn btn-primary col-md-2">Post It</button>
+  <input class= "col-md-3" id="title" type="text" placeholder="Title Your Post">
+  <input class= "col-md-7" id="question" type="text" placeholder="Put Question Here">
+  <button type="button" id="postIt" class="btn btn-primary col-md-2">Post It</button>
 
   <table class="table table-bordered">
     <thead>
@@ -21,15 +21,42 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td class= "col-md-3">1</td>
-        <td class= "col-md-7">2</td>
-        <td class= "col-md-2">3</td>
+      <tr class="template">
+        <td id="log" class= "col-md-2">1</td>
+        <td id="log" class= "col-md-6">2</td>
+        <td id="log" class= "col-md-1">3</td>
+        <td id="log" class= "col-md-3">
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+          Offer Advice
+        </button></td>
       </tr>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Help Out A Human</h4>
+      </div>
+      <div class="modal-body">
+        <input class="col-md-12" type="text" placeholder="Type your advice here...">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Post Advice</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
     </tbody>
   </table>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+
+  <ul id="addQuestion"></ul>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
   <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
   <script src="main.js"></script>
 </body>
